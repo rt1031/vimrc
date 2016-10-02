@@ -10,10 +10,26 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
   " neobundle自体をneobundleで管理
   NeoBundleFetch 'Shougo/neobundle.vim'
   
+  "補完機能の追加
+  NeoBundle 'Shougo/neocomplete.vim'
+
   "NERDtreeを追加
   NeoBundle 'scrooloose/nerdtree' 
 
-   " 今後このあたりに追加のプラグインをどんどん書いて行きます！！"
+  "Uniteを追加
+  NewBundle 'shougo/unite.vim'
+
+  "emmet-vimを追加
+  NeoBundle 'mattn/emmet-vim'
+
+  "EditorConfigを追加
+  NeoBundle 'editorconfig/editorconfig-vim'
+
+  "srround.vimを追加
+ " NeoBundle 'taichouchou2/surround.vim'
+  
+  "vim-browsereload-macを追加
+  NeoBundle 'tell-k/vim-browsereload-mac'
     
     call neobundle#end()
      

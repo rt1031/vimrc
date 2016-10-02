@@ -1,2 +1,6 @@
+editorconfig-vim
+emmet-vim
 neobundle.vim
+neocomplete.vim
 nerdtree
+vim-browsereload-mac

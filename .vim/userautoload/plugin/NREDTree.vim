@@ -40,6 +40,9 @@ endfor
 で1番左のタブ、t2
 で1番左から2番目のタブにジャンプ
 
+"行番号を表示
+let NERDTreeShowLineNumbers=1
+
 map <silent> [Tag]c :tablast <bar> tabnew<CR>
 " tc
 新しいタブを一番右に作る                                                         map <silent> [Tag]x :tabclose<CR>
@@ -48,3 +51,5 @@ map <silent> [Tag]n :tabnext<CR>
 " tn 次のタブ
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
+autocmd VimEnter * execute 'NERDTree'
+"nerdtreeの自動起動

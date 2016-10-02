@@ -1,9 +1,8 @@
-
 "--------------------
 " 基本的な設定
 "--------------------
 "新しい行のインデントを現在行と同じにする
-set autoindent 
+set autoindent
 
 "バックアップファイルのディレクトリを指定する
 set backupdir=$HOME/vimbackup
@@ -33,9 +32,9 @@ set number
 set showmatch
 
 set expandtab "タブ入力を複数の空白入力に置き換える
-set tabstop=2 "画面上でタブ文字が占める幅
-set shiftwidth=2 "自動インデントでずれる幅
-set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set tabstop=4 "画面上でタブ文字が占める幅
+set shiftwidth=4 "自動インデントでずれる幅
+set softtabstop=4 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set autoindent "改行時に前の行のインデントを継続する
 set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 
@@ -46,6 +45,13 @@ set smarttab
 " grep検索を設定する
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
+
+"deleteキー使えるようにしたい
+set backspace=indent,eol,start
+
+"nerdtreeで行番号を表示さす
+let NERDTreeShowLineNumbers=1
+
 
 " 検索結果のハイライトをEsc連打でクリアする
 nnoremap <ESC><ESC> :nohlsearch<CR>
@@ -66,4 +72,16 @@ imap ( ()<LEFT>
 
 "エスケープの代用
 inoremap jj <esc>
-inoremap ;; <esc>
+
+"保存をcontorl-ssでできる
+nnoremap <Plug>(save) :<C-u>call Save()<CR>
+map ;;  <Plug>(save)
+
+"ノーマルモードで;を打ったらコマンドモードに入る
+nnoremap ; :
+
+"保存する関数
+function! Save()
+	echo "wei"
+	  :w!
+endfunction
