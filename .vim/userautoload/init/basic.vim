@@ -17,7 +17,7 @@ set nocompatible
 set directory=$HOME/vimbackup
 
 "タブの代わりに空白文字を指定する
-set expandtab
+"set expandtab
 
 "変更中のファイルでも、保存しないで他のファイルを表示する
 set hidden
@@ -32,9 +32,9 @@ set number
 set showmatch
 
 set expandtab "タブ入力を複数の空白入力に置き換える
-set tabstop=4 "画面上でタブ文字が占める幅
-set shiftwidth=4 "自動インデントでずれる幅
-set softtabstop=4 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set tabstop=2 "画面上でタブ文字が占める幅
+set shiftwidth=2 "自動インデントでずれる幅
+set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set autoindent "改行時に前の行のインデントを継続する
 set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 
@@ -49,9 +49,18 @@ set grepprg=grep\ -nh
 "deleteキー使えるようにしたい
 set backspace=indent,eol,start
 
+
+""""""""filetype""""""""""
+autocmd BufRead,BufNewFile *.vue setfiletype html
+
+""""""""""""""""""""""""""
+
+
 "nerdtreeで行番号を表示さす
 let NERDTreeShowLineNumbers=1
 
+"vim-indent-guideをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
 
 " 検索結果のハイライトをEsc連打でクリアする
 nnoremap <ESC><ESC> :nohlsearch<CR>

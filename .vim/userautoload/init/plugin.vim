@@ -1,45 +1,59 @@
 "---------------------------
-" Start Neobundle Settings.
+" Start Dein Settings.
 "---------------------------
 " bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
- 
- " Required:
- call neobundle#begin(expand('~/.vim/bundle/'))
+
+if &compatible
+    set nocompatible
+  endif
+  set runtimepath+=/Users/ryusei/.vim/dein/dein.vim/
+
+
+  call dein#begin(expand('~/.vim/dein'))
   
-  " neobundle自体をneobundleで管理
-  NeoBundleFetch 'Shougo/neobundle.vim'
+  call dein#add('Shougo/dein.vim')
+  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
   
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/neosnippet')
+  call dein#add('Shougo/neosnippet')
   "補完機能の追加
-  NeoBundle 'Shougo/neocomplete.vim'
+  call dein#add('Shougo/neocomplete.vim')
 
   "NERDtreeを追加
-  NeoBundle 'scrooloose/nerdtree' 
+  call dein#add('scrooloose/nerdtree')
 
   "Uniteを追加
-  NewBundle 'shougo/unite.vim'
+  call dein#add('shougo/unite.vim')
 
   "emmet-vimを追加
-  NeoBundle 'mattn/emmet-vim'
+  call dein#add('mattn/emmet-vim')
 
   "EditorConfigを追加
-  NeoBundle 'editorconfig/editorconfig-vim'
+  call dein#add('editorconfig/editorconfig-vim')
 
   "srround.vimを追加
- " NeoBundle 'taichouchou2/surround.vim'
+  call dein#add('taichouchou2/surround.vim')
   
   "vim-browsereload-macを追加
-  NeoBundle 'tell-k/vim-browsereload-mac'
+  call dein#add('tell-k/vim-browsereload-mac')
+
+  "vue-vimを追加
+  call dein#add('posva/vim-vue')
+
+  "indentを見える化
+  call dein#add('nathanaelkane/vim-indent-guides')
     
-    call neobundle#end()
-     
-     " Required:
-     filetype plugin indent on
-      
-      " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-      " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
-      NeoBundleCheck
-       
-       "-------------------------
-       " End Neobundle Settings.
-       "-------------------------)))
+  "選択範囲をコメントする
+  call dein#add('hrp/enhancedcommentify')
+
+  "括弧が閉じてなかったらハイライト
+  call dein#add('vim-scripts/Highlight-UnMatched-Brackets')
+  
+  " (中略)
+  
+  call dein#end
+"-------------------------
+" End Dein Settings.
+"-------------------------)))

@@ -1,6 +1,9 @@
+EnhancedCommentify
 editorconfig-vim
 emmet-vim
 neobundle.vim
 neocomplete.vim
 nerdtree
 vim-browsereload-mac
+vim-indent-guides
+vim-vue
